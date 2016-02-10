@@ -17,6 +17,7 @@ use Yii;
  * @property string $confirmation_token
  * @property integer $status
  * @property integer $superadmin
+ * @property integer $ldap_user
  * @property integer $created_at
  * @property integer $updated_at
  */
