@@ -58,6 +58,12 @@ $this->params['breadcrumbs'][] = $this->title;
 						'visible'=>User::hasPermission('viewUserEmail'),
 					],
 					[
+						'attribute' => 'ldap_user',
+						'value' => $model->ldap_user,
+						'format' => 'boolean',
+						'visible' => User::hasPermission('viewUserLdap'),
+					],
+					[
 						'attribute'=>'email_confirmed',
 						'value'=>$model->email_confirmed,
 						'format'=>'boolean',
