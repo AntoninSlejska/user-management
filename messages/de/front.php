@@ -32,6 +32,7 @@ return [
     'Forgot password ?' => 'Passwort vergessen?',
     'Incorrect username or password.' => 'Falscher Benutzername oder Passwort.',
     'Login has been taken' => 'Dieser Login existiert bereits',
+    'No connection to the directory service' => 'Es konnte keine Verbindung zum Verzeichnisserver hergestellt werden.',
     'Password' => 'Passwort',
     'Password recovery' => 'Passwort wiederherstellen',
     'Password reset for' => 'Passwort zurücksetzen für',
