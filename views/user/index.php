@@ -96,6 +96,11 @@ $this->params['breadcrumbs'][] = $this->title;
 						'visible'=>User::hasPermission('viewUserEmail'),
 					],
 					[
+						'class' => 'webvimark\components\StatusColumn',
+						'attribute' => 'ldap_user',
+						'visible' => User::hasPermission('viewUserLdap'),
+					],
+					[
 						'attribute'=>'gridRoleSearch',
 						'filter'=>ArrayHelper::map(Role::getAvailableRoles(Yii::$app->user->isSuperAdmin),'name', 'description'),
 						'value'=>function(User $model){
