@@ -1,5 +1,6 @@
 This is not the original webvimark/module-user-management package!
 -----
+Based on the version 1.0.4.
 
 This package is modified like the following:
 
