@@ -25,6 +25,16 @@ class UserConfig extends User
  	 * @inheritdoc
 	 */
 	public $cookieLifetime = 2592000;
+	
+	/**
+	* @inheritdoc
+	*/
+	public $ldapServer = array();
+	
+	/**
+	* @inheritdoc
+	*/
+	public $ldapDomain = array();
   
 	/**
 	 * @inheritdoc
