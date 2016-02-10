@@ -46,6 +46,7 @@ use webvimark\extensions\BootstrapSwitch\BootstrapSwitch;
 
 		<?= $form->field($model, 'email')->textInput(['maxlength' => 255]) ?>
 		<?= $form->field($model, 'email_confirmed')->checkbox() ?>
+		<?= $form->field($model, 'ldap_user')->checkbox() ?>
 
 	<?php endif; ?>
 
