@@ -186,7 +186,7 @@ class LoginForm extends Model
 							ldap_close($connect);
 							$this->addError('password',
 								UserManagementModule::t('front', 'Incorrect username or password.') . 
-								UserManagementModule::t('front', ' Or your account is blocked. Contact to unblock your account: ') .
+								UserManagementModule::t('front', ' Or your account is blocked. Contact to unlock your account: ') .
 								Yii::$app->user->ldapUnblockContact
 							);
 							return false;
