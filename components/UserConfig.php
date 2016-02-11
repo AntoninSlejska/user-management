@@ -30,6 +30,11 @@ class UserConfig extends User
 	* @inheritdoc
 	*/
 	public $ldaps = array();
+	
+	/**
+	 * @inheritdoc
+	 */
+	 public $ldapUnblockContact = '';
   
 	/**
 	 * @inheritdoc
