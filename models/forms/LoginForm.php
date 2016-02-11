@@ -184,7 +184,11 @@ class LoginForm extends Model
 							// No connection to the LDAP server with the domain name?
 							// Close existing LDAP connection and return an error
 							ldap_close($connect);
-							$this->addError('password', UserManagementModule::t('front', 'Incorrect username or password.'));
+							$this->addError('password',
+								UserManagementModule::t('front', 'Incorrect username or password.') . 
+								UserManagementModule::t('front', ' Or your account is blocked. Contact to unblock your account: ') .
+								Yii::$app->user->ldapUnblockContact
+							);
 							return false;
 						}
 					}
