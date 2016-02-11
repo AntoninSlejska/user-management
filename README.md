@@ -67,6 +67,8 @@ You have to add the following lines to composer.json to install this version of 
     },
 ```
 
+---
+
 User management module for Yii 2
 =====
 
