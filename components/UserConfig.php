@@ -29,12 +29,7 @@ class UserConfig extends User
 	/**
 	* @inheritdoc
 	*/
-	public $ldapServer = array();
-	
-	/**
-	* @inheritdoc
-	*/
-	public $ldapDomain = array();
+	public $ldaps = array();
   
 	/**
 	 * @inheritdoc
