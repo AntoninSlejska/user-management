@@ -48,4 +48,5 @@ return [
     'Too many attempts' => 'Zu viele Versuche',
     'Unable to send message for email provided' => 'Es war nicht möglich, die Nachricht an die angegebene E-Mail-Adresse zu senden',
     'You could not login from this IP' => 'Sie können sich von dieser IP nicht anmelden',
+    ' Or your account is blocked. Contact to unlock your account: ' => 'oder Ihre Konto ist gesperrt. Zum Entsperren kontaktieren Sie: '
 ];
