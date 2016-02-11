@@ -18,13 +18,11 @@ If the the login is successful the user will be logged in as the user that is gi
 You can set multiple LDAP servers and multiple LDAP domains inside the config file:
 
 ```php
-
-    'user' => [
-      'class' => 'webvimark\modules\UserManagement\components\UserConfig',
-      'ldapServer' => ['10.11.12.13','1.2.3.4','99.99.99.99'],
-      'ldapDomain' => ['YOURDOMAIN','ANOTHERDOMAIN'],
-     ]
-     
+'user' => [
+     'class' => 'webvimark\modules\UserManagement\components\UserConfig',
+     'ldapServer' => ['10.11.12.13','1.2.3.4','99.99.99.99'],
+     'ldapDomain' => ['YOURDOMAIN','ANOTHERDOMAIN'],
+]
 ```
 
 The login procedure will try out every server/domain combination with the given credentials.
@@ -52,6 +50,23 @@ $new_user->save();
 
 Notice: I'm using $security->generateRandomString inside md5() method to generate a random strong password inside the local database.
 It is just necessary to create this user to have an user object on the webpage that is controlled by our ldap user. 
+
+You have to add the following lines to composer.json to install this version of User management module:
+
+```json
+"repositories":
+    [
+        {
+            "type": "vcs",
+            "url": "https://github.com/AntoninSlejska/user-management"
+        }
+    ],
+"require":
+    {
+        "webvimark/module-user-management": "*",
+    },
+```
+
 User management module for Yii 2
 =====
 
