@@ -39,7 +39,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 				<?= Html::beginForm(['set-roles', 'id'=>$user->id]) ?>
 
-				<?php foreach (Role::getAvailableRoles() as $aRole): ?>
+				<?php foreach (Role::getAvailableRoles( Yii::$app->getModule('user-management')->userCanAssignAnotherRoles ) as $aRole): ?>
 					<label>
 						<?php $isChecked = in_array($aRole['name'], ArrayHelper::map(Role::getUserRoles($user->id), 'name', 'name')) ? 'checked' : '' ?>
 

@@ -124,6 +124,16 @@ class UserManagementModule extends \yii\base\Module
 	public $userCanHaveMultipleRoles = true;
 
 	/**
+	 * Affects only web interface in "/user-management/user-permission/set" route.
+	 *
+	 * If true the user with one role (e.g. Administration), will be able to assign
+	 * assign also another roles.
+	 *
+	 * @var bool
+	 */
+	public $userCanAssignAnotherRoles = false;
+
+	/**
 	 * How much attempts user can made to login or recover password in $attemptsTimeout seconds interval
 	 *
 	 * @var int
