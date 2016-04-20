@@ -96,7 +96,7 @@ class GhostAccessControl extends ActionFilter
 	 *
 	 * @throws ForbiddenHttpException if the user is already logged in.
 	 */
-	protected function denyAccess()
+	public function denyAccess()
 	{
 		if ( Yii::$app->user->getIsGuest() )
 		{
@@ -108,4 +108,4 @@ class GhostAccessControl extends ActionFilter
 		}
 	}
 
-} 
+}
