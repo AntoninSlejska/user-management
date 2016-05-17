@@ -13,6 +13,7 @@ use webvimark\modules\UserManagement\components\GhostHtml;
 use webvimark\modules\UserManagement\UserManagementModule;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
+use yii\helpers\Url;
 
 $this->title = UserManagementModule::t('back', 'Settings for permission') . ': ' . $item->description;
 $this->params['breadcrumbs'][] = ['label' => UserManagementModule::t('back', 'Permissions'), 'url' => ['index']];
@@ -35,6 +36,26 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <div class="row">
 	<div class="col-sm-6">
+		<div class="panel panel-default">
+
+			<div class="panel-heading">
+				<strong>
+					<span class="glyphicon glyphicon-th"></span> <?= UserManagementModule::t('back', 'Roles having this permission') ?>
+				</strong>
+			</div>
+
+			<div class="panel-body">
+				<div class="row">
+					<?php foreach ($roles as $role): ?>
+						<div class="col-sm-6">
+							<?= Html::a($role->description, Url::to(['role/view', 'id'=>$role->name])) ?>
+							<br/>
+						</div>
+					<?php endforeach ?>
+				</div>
+			</div>
+		</div>
+
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<strong>

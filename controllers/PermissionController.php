@@ -6,6 +6,7 @@ namespace webvimark\modules\UserManagement\controllers;
 use webvimark\modules\UserManagement\components\AuthHelper;
 use webvimark\modules\UserManagement\models\rbacDB\AbstractItem;
 use webvimark\modules\UserManagement\models\rbacDB\Permission;
+use webvimark\modules\UserManagement\models\rbacDB\Role;
 use webvimark\modules\UserManagement\models\rbacDB\Route;
 use webvimark\modules\UserManagement\models\rbacDB\search\PermissionSearch;
 use webvimark\components\AdminDefaultController;
@@ -49,7 +50,18 @@ class PermissionController extends AdminDefaultController
 		$childRoutes = AuthHelper::getChildrenByType($item->name, AbstractItem::TYPE_ROUTE);
 		$childPermissions = AuthHelper::getChildrenByType($item->name, AbstractItem::TYPE_PERMISSION);
 
-		return $this->renderIsAjax('view', compact('item', 'childPermissions', 'routes', 'permissionsByGroup', 'childRoutes'));
+		$allRoles = Role::find()->all();
+		$roles = array();
+		foreach ($allRoles as $role) {
+			$rolePermissions = $role->getPermissionsByRole($role->name, false);
+			foreach ($rolePermissions as $permission) {
+				if ($permission->name == $item->name) {
+					array_push($roles, $role);
+				}
+			}
+		}
+
+		return $this->renderIsAjax('view', compact('item', 'childPermissions', 'routes', 'permissionsByGroup', 'childRoutes', 'roles'));
 	}
 
 	/**
@@ -165,4 +177,4 @@ class PermissionController extends AdminDefaultController
 
 		return $this->renderIsAjax('update', compact('model'));
 	}
-} 
+}
